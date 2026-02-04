@@ -11,7 +11,8 @@
 
     <nav class="navbar">
         <a href="#home" class="logo-container">
-            <img src="picture/logo.png" alt="Logo" class="nav-logo">
+            <img src="picture/logo.png" alt="Logo" class="nav-logo" style="height: 50px; width: auto;">
+            
             <span class="logo-text">Prediction Wave</span>
         </a>
         <div class="nav-links">
@@ -53,17 +54,17 @@
         <h2 id="main-resources" class="section-title">Main Content</h2>
         <div class="resource-container">
             <a href="https://drive.google.com/drive/folders/1Zz6LrvlHGG31Pmmuqsg2AC8kvUGBqj5h?usp=drive_link" target="_blank" class="resource-box">
-                <div class="icon-wrapper"><img src="picture/report.jpg" alt="Report" class="icon-img"></div>
+                <div class="icon-wrapper"><img src="picture/report.jpg" alt="Report" class="icon-img" style="width: 50px;"></div>
                 <h3>Report</h3>
                 <p>Download Full Project Report</p>
             </a>
             <a href="javascript:void(0);" onclick="alert('Prediction Wave App is coming soon!');" class="resource-box">
-                <div class="icon-wrapper"><img src="picture/app.jpg" alt="App" class="icon-img"></div>
+                <div class="icon-wrapper"><img src="picture/app.jpg" alt="App" class="icon-img" style="width: 50px;"></div>
                 <h3>Prediction Wave App</h3>
                 <p>Access the Forecasting Application</p>
             </a>
             <a href="https://github.com/natthaphonmint/wave_height_forecasting" target="_blank" class="resource-box">
-                <div class="icon-wrapper"><img src="picture/code.jpg" alt="Source Code" class="icon-img"></div>
+                <div class="icon-wrapper"><img src="picture/code.jpg" alt="Source Code" class="icon-img" style="width: 50px;"></div>
                 <h3>Source Code</h3>
                 <p>View Repository on GitHub</p>
             </a>
@@ -116,13 +117,14 @@
       <div id="caption-text"></div>
     </div>
 
-    <img src="picture/jellyfish.jpg" class="jellyfish jelly-1" alt="Jellyfish">
-    <img src="picture/jellyfish.jpg" class="jellyfish jelly-2" alt="Jellyfish">
+    <img src="picture/jellyfish.jpg" class="jellyfish jelly-1" alt="Jellyfish" style="width: 120px; position: fixed;">
+    <img src="picture/jellyfish.jpg" class="jellyfish jelly-2" alt="Jellyfish" style="width: 120px; position: fixed;">
 
     <script>
         let slideIndex = 0;
         let timer;
         showSlidesAuto();
+
         function showSlidesAuto() {
             let i;
             let slides = document.getElementsByClassName("slide");
@@ -137,8 +139,10 @@
             }
             timer = setTimeout(showSlidesAuto, 5000); 
         }
+
         function plusSlides(n) { clearTimeout(timer); showSlidesManual(slideIndex += n); }
         function currentSlide(n) { clearTimeout(timer); showSlidesManual(slideIndex = n); }
+
         function showSlidesManual(n) {
             let i;
             let slides = document.getElementsByClassName("slide");
@@ -151,6 +155,7 @@
             dots[slideIndex-1].className += " active";
             timer = setTimeout(showSlidesAuto, 5000); 
         }
+
         function openModal(element) {
             clearTimeout(timer); 
             var modal = document.getElementById("myModal");
@@ -160,10 +165,12 @@
             modalImg.src = element.src;
             captionText.innerHTML = element.alt;
         }
+
         function closeModal() {
             document.getElementById("myModal").style.display = "none";
             timer = setTimeout(showSlidesAuto, 2000); 
         }
+
         window.onclick = function(event) {
             var modal = document.getElementById("myModal");
             if (event.target == modal) { closeModal(); }
