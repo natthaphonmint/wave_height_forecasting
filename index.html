@@ -85,7 +85,7 @@
             </a>
 
             <a href="javascript:void(0);" onclick="alert('Profile is coming soon!');" class="member-card">
-                <div class="img-circle"><img src="picture/m3.jpg" alt="Advisor"></div>
+                <div class="img-circle"><img src="picture/m3.jpg" alt="Pitchaya"></div>
                 <h3 class="role-blue">Project Advisor</h3> 
                 <p class="name-white">Pitchaya Wiratchotisatian, Ph.D.</p>
             </a>
@@ -140,11 +140,18 @@
                 slides[slideIndex-1].style.display = "block";  
                 dots[slideIndex-1].className += " active";
             }
-            timer = setTimeout(showSlidesAuto, 5000); 
+            timer = setTimeout(showSlidesAuto, 5000); // Change image every 5 seconds
         }
 
-        function plusSlides(n) { clearTimeout(timer); showSlidesManual(slideIndex += n); }
-        function currentSlide(n) { clearTimeout(timer); showSlidesManual(slideIndex = n); }
+        function plusSlides(n) {
+            clearTimeout(timer); 
+            showSlidesManual(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            clearTimeout(timer); 
+            showSlidesManual(slideIndex = n);
+        }
 
         function showSlidesManual(n) {
             let i;
@@ -159,8 +166,9 @@
             timer = setTimeout(showSlidesAuto, 5000); 
         }
 
+        // Modal Logic
         function openModal(element) {
-            clearTimeout(timer); 
+            clearTimeout(timer); // Pause slider when modal is open
             var modal = document.getElementById("myModal");
             var modalImg = document.getElementById("img01");
             var captionText = document.getElementById("caption-text");
@@ -171,12 +179,15 @@
 
         function closeModal() {
             document.getElementById("myModal").style.display = "none";
-            timer = setTimeout(showSlidesAuto, 2000); 
+            timer = setTimeout(showSlidesAuto, 2000); // Resume slider
         }
 
+        // Close modal when clicking outside image
         window.onclick = function(event) {
             var modal = document.getElementById("myModal");
-            if (event.target == modal) { closeModal(); }
+            if (event.target == modal) {
+                closeModal();
+            }
         }
     </script>
 </body>
