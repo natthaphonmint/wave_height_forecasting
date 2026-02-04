@@ -10,19 +10,22 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">Prediction Wave</div>
+        <a href="#home" class="logo-container">
+            <img src="picture/logo.png" alt="Logo" class="nav-logo">
+            <span class="logo-text">Prediction Wave</span>
+        </a>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#abstract">Abstract</a>
             <a href="#main-resources">Main Content</a>
             <a href="#team">Team Members</a>
-            <a href="#workflow" class="highlight-btn">WORKFLOW</a>
+            <a href="#workflow">Workflow</a>
         </div>
     </nav>
 
     <section id="home" class="hero-section">
         <video autoplay muted loop playsinline class="back-video">
-            <source src="cover_video.mp4" type="video/mp4">
+            <source src="picture/cover_video.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
         <div class="hero-content">
@@ -36,82 +39,135 @@
         <h2 id="abstract" class="section-title">Abstract</h2>
         <div class="abstract-box">
             <p>
-                Thailand’s extensive coastline along the Andaman Sea and the Gulf of Thailand is vital to its economy and maritime security. Given that wave height is a critical parameter for fishing, tourism, and maritime logistics, extreme wave events pose significant risks to lives and infrastructure. Consequently, accurate forecasting is essential for disaster mitigation and operational planning. 
+                Thailand’s extensive coastline along the Andaman Sea and the Gulf of Thailand is vital to its economy and maritime security. Given that wave height is a critical parameter for fishing, tourism, and maritime logistics, extreme wave events pose significant risks to lives and infrastructure. Consequently, accurate forecasting is essential for disaster mitigation and operational planning.
                 <br><br>
-                This study develops short-to-long-term wave height forecasting models (6, 12, and 24-hour lead times) by leveraging deep learning techniques, specifically Long Short-Term Memory (LSTM) and one-dimensional Convolutional Neural Networks (1D CNN). The models utilize hourly ERA5 reanalysis data from the ECMWF spanning January 2018 to January 2026. Ten meteorological and oceanographic variables are incorporated, including eastward (u-component) and northward (v-component) wind components at a height of 10 meters, mean sea level pressure, significant wave height, mean wave period, wave direction, ocean current speed and direction, and sea surface temperature. 
+                This study develops short-to-long-term wave height forecasting models (6, 12, and 24-hour lead times) by leveraging deep learning techniques, specifically Long Short-Term Memory (LSTM) and one-dimensional Convolutional Neural Networks (1D CNN). The models utilize hourly ERA5 reanalysis data from the ECMWF spanning January 2018 to January 2026.
                 <br><br>
-                The research focuses on five strategic coastal locations: Patong Beach (Phuket), Pak Phanang and Hua Sai (Nakhon Si Thammarat), Cha-am (Phetchaburi) and Pattaya (Chonburi). Model performance is evaluated using MAE, RMSE, NRMSE and MAPE. Furthermore, the SHAP (SHapley Additive exPlanations) technique is employed to interpret variable contributions and identify key drivers in the forecasting process. The resulting models aim to provide high-precision tools for marine decision-making, thereby enhancing maritime safety and promoting sustainable ocean development.
+                The research focuses on five strategic coastal locations: Patong Beach (Phuket), Pak Phanang and Hua Sai (Nakhon Si Thammarat), Cha-am (Phetchaburi) and Pattaya (Chonburi). Model performance is evaluated using MAE, RMSE, NRMSE and MAPE. Furthermore, the SHAP (SHapley Additive exPlanations) technique is employed to interpret variable contributions and identify key drivers in the forecasting process.
             </p>
             <p style="margin-top: 25px; color: #3498db; font-weight: 700;">
-                <span style="color: #fff;">Keywords:</span> Wave height forecasting, Deep learning, LSTM, 1D CNN, ERA5, SHAP, Thailand coastal waters
+                <span style="color: #fff;">Keywords:</span> Wave height forecasting, Deep learning, LSTM, 1D CNN, ERA5, SHAP
             </p>
         </div>
 
         <h2 id="main-resources" class="section-title">Main Content</h2>
-        
         <div class="resource-container">
             <a href="https://drive.google.com/drive/folders/1Zz6LrvlHGG31Pmmuqsg2AC8kvUGBqj5h?usp=drive_link" target="_blank" class="resource-box">
-                <div class="icon-wrapper">
-                    <img src="report.jpg" alt="Report" style="width: 100%; height: 100%; object-fit: contain; filter: invert(1); mix-blend-mode: screen;">
-                </div>
+                <div class="icon-wrapper"><img src="picture/report.jpg" alt="Report" class="icon-img"></div>
                 <h3>Report</h3>
                 <p>Download Full Project Report</p>
             </a>
-
             <a href="javascript:void(0);" onclick="alert('Prediction Wave App is coming soon!');" class="resource-box">
-                <div class="icon-wrapper">
-                    <img src="app.jpg" alt="App" style="width: 100%; height: 100%; object-fit: contain; filter: invert(1); mix-blend-mode: screen;">
-                </div>
+                <div class="icon-wrapper"><img src="picture/app.jpg" alt="App" class="icon-img"></div>
                 <h3>Prediction Wave App</h3>
                 <p>Access the Forecasting Application</p>
             </a>
-
-            <a href="#" class="resource-box">
-                <div class="icon-wrapper">
-                    <img src="code.jpg" alt="Source Code" style="width: 100%; height: 100%; object-fit: contain; filter: invert(1); mix-blend-mode: screen;">
-                </div>
+            <a href="https://github.com/natthaphonmint/wave_height_forecasting" target="_blank" class="resource-box">
+                <div class="icon-wrapper"><img src="picture/code.jpg" alt="Source Code" class="icon-img"></div>
                 <h3>Source Code</h3>
                 <p>View Repository on GitHub</p>
             </a>
         </div>
 
-        <h2 id="workflow" class="section-title">Methodology Workflow</h2>
-        <div class="workflow-box">
-            <img src="workflow.jpg" alt="System Workflow Diagram">
-            <p class="caption">Figure 1: Proposed system architecture and data flow.</p>
-        </div>
-
         <h2 id="team" class="section-title">Team Members</h2>
         <div class="team-container">
-            
             <a href="https://github.com/Kanyaweekh" target="_blank" class="member-card">
-                <div class="img-circle">
-                    <img src="m1.jpg" alt="Kanyawee Khamudom">
-                </div>
+                <div class="img-circle"><img src="picture/m1.jpg" alt="Kanyawee"></div>
                 <h3 class="role-blue">Student</h3>
                 <p class="name-white">Kanyawee Khamudom</p>
             </a>
-
             <a href="https://github.com/natthaphonmint" target="_blank" class="member-card">
-                <div class="img-circle">
-                    <img src="m2.jpg" alt="Natthaphon Artkaeo">
-                </div>
+                <div class="img-circle"><img src="picture/m2.jpg" alt="Natthaphon"></div>
                 <h3 class="role-blue">Student</h3>
                 <p class="name-white">Natthaphon Artkaeo</p>
             </a>
-
             <a href="https://vi-lab-th.github.io/" target="_blank" class="member-card">
-                <div class="img-circle">
-                    <img src="m3.jpg" alt="Assoc. Prof. Thanapong Intharah">
-                </div>
+                <div class="img-circle"><img src="picture/m3.jpg" alt="Advisor"></div>
                 <h3 class="role-blue">Project Advisor</h3>
                 <p class="name-white">Assoc. Prof. Thanapong<br>Intharah</p>
             </a>
-
         </div>
 
+        <h2 id="workflow" class="section-title">Workflow</h2>
+        <div class="workflow-slider">
+            <div class="slider-container">
+                <div class="slide fade">
+                    <img src="picture/flow1.jpg" style="width:100%; cursor: pointer;" onclick="openModal(this)" alt="Figure 1: Data Processing and Model Training Flow">
+                    <div class="caption">Figure 1: Data Processing and Model Training Flow (Click to Enlarge)</div>
+                </div>
+                <div class="slide fade">
+                    <img src="picture/flow2.jpg" style="width:100%; cursor: pointer;" onclick="openModal(this)" alt="Figure 2: System Architecture and Deployment">
+                    <div class="caption">Figure 2: System Architecture and Deployment (Click to Enlarge)</div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div style="text-align:center; margin-top: 15px;">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+            </div>
+        </div>
         <div style="height: 100px;"></div>
     </div>
 
+    <div id="myModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption-text"></div>
+    </div>
+
+    <img src="picture/jellyfish.jpg" class="jellyfish jelly-1" alt="Jellyfish">
+    <img src="picture/jellyfish.jpg" class="jellyfish jelly-2" alt="Jellyfish">
+
+    <script>
+        let slideIndex = 0;
+        let timer;
+        showSlidesAuto();
+        function showSlidesAuto() {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+            if(slides.length > 0) {
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+            }
+            timer = setTimeout(showSlidesAuto, 5000); 
+        }
+        function plusSlides(n) { clearTimeout(timer); showSlidesManual(slideIndex += n); }
+        function currentSlide(n) { clearTimeout(timer); showSlidesManual(slideIndex = n); }
+        function showSlidesManual(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            timer = setTimeout(showSlidesAuto, 5000); 
+        }
+        function openModal(element) {
+            clearTimeout(timer); 
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption-text");
+            modal.style.display = "block";
+            modalImg.src = element.src;
+            captionText.innerHTML = element.alt;
+        }
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+            timer = setTimeout(showSlidesAuto, 2000); 
+        }
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) { closeModal(); }
+        }
+    </script>
 </body>
 </html>
