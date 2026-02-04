@@ -35,7 +35,7 @@ body {
 }
 
 .nav-logo {
-    height: 40px; 
+    height: 40px; /* บังคับความสูงโลโก้ */
     width: auto;
     margin-right: 12px;
 }
@@ -125,7 +125,7 @@ body {
 /* --- CONTENT CONTAINER --- */
 .content-container {
     position: relative;
-    /* แก้ไขเส้นทางรูปภาพตรงนี้ครับ */
+    /* พื้นหลัง */
     background: url('picture/underwater.jpg') no-repeat center top;
     background-size: cover;
     background-attachment: fixed;
@@ -292,91 +292,4 @@ body {
     transition: background-color 0.3s;
 }
 .active, .dot:hover { background-color: #3498db; }
-.fade { animation-name: fade; animation-duration: 1.5s; }
-@keyframes fade { from {opacity: .4} to {opacity: 1} }
-
-/* --- MODAL --- */
-.modal {
-    display: none; position: fixed; z-index: 2000;
-    padding-top: 50px; left: 0; top: 0;
-    width: 100%; height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
-}
-.modal-content {
-    margin: auto; display: block;
-    width: 80%; max-width: 1200px;
-    border-radius: 5px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.2);
-}
-#caption-text {
-    margin: auto; display: block; width: 80%;
-    text-align: center; color: #ccc;
-    padding: 10px 0; font-size: 18px;
-}
-.close {
-    position: absolute; top: 15px; right: 35px;
-    color: #f1f1f1; font-size: 40px;
-    font-weight: bold; cursor: pointer;
-}
-.close:hover { color: #bbb; }
-
-/* --- JELLYFISH ANIMATION (JPG Version) --- */
-.jellyfish {
-    position: fixed;
-    width: 120px;
-    opacity: 0.7;
-    pointer-events: none;
-    z-index: 10;
-    filter: drop-shadow(0 0 10px rgba(100, 200, 255, 0.5));
-    
-    /* * เทคนิคพิเศษสำหรับ JPG:
-     * ถ้าพื้นหลังรูปเป็น "สีขาว" ให้เปิดใช้งาน mix-blend-mode: multiply;
-     * ถ้าพื้นหลังรูปเป็น "สีดำ" ให้เปิดใช้งาน mix-blend-mode: screen;
-     * ลองเอา comment ออกทีละตัวดูนะครับ เพื่อให้เนียนที่สุด
-     */
-    
-    mix-blend-mode: multiply;  /* ลองเปิดอันนี้ดูถ้ามีกรอบสีขาว */
-    /* mix-blend-mode: screen; */
-}
-
-/* ตัวที่ 1 */
-.jelly-1 {
-    bottom: 10%;
-    left: -150px;
-    animation: swimRight 25s linear infinite;
-}
-
-/* ตัวที่ 2 */
-.jelly-2 {
-    top: 20%;
-    right: -150px;
-    animation: swimLeft 30s linear infinite;
-    animation-delay: 2s;
-}
-
-@keyframes swimRight {
-    0% { left: -150px; transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(-30px) rotate(5deg); }
-    50% { transform: translateY(0) rotate(0deg); }
-    75% { transform: translateY(30px) rotate(-5deg); }
-    100% { left: 100vw; transform: translateY(0); } 
-}
-
-@keyframes swimLeft {
-    0% { right: -150px; transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(40px) rotate(-5deg); }
-    50% { transform: translateY(0) rotate(0deg); }
-    75% { transform: translateY(-40px) rotate(5deg); }
-    100% { right: 100vw; transform: translateY(0); }
-}
-
-@media screen and (max-width: 768px) {
-    .jellyfish { display: none; }
-    
-    .navbar { padding: 15px; flex-direction: column; gap: 10px; }
-    .hero-content h1 { font-size: 36px; } 
-    .hero-content p { font-size: 18px; }  
-    .resource-container, .team-container { flex-direction: column; align-items: center; }
-    .modal-content { width: 95%; }
-}
+.
