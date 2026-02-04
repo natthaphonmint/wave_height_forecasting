@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Forecasting Model</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Prediction Wave</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#abstract">Abstract</a>
+            <a href="#main-resources">Main Content</a>
+            <a href="#team">Team Members</a>
+            <a href="#workflow" class="highlight-btn">WORKFLOW</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <video autoplay muted loop playsinline class="back-video">
+            <source src="cover_video.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Developing a Wave Height<br>Forecasting Model for<br>Maritime in Thailand</h1>
+            <p>USING ERA5 REANALYSIS DATA AND DEEP LEARNING TECHNIQUES</p>
+        </div>
+    </section>
+
+    <div class="content-container">
+        
+        <h2 id="abstract" class="section-title">Abstract</h2>
+        <div class="abstract-box">
+            <p>
+                Thailand’s extensive coastline along the Andaman Sea and the Gulf of Thailand is vital to its economy and maritime security. Given that wave height is a critical parameter for fishing, tourism, and maritime logistics, extreme wave events pose significant risks to lives and infrastructure. Consequently, accurate forecasting is essential for disaster mitigation and operational planning. 
+                <br><br>
+                This study develops short-to-long-term wave height forecasting models (6, 12, and 24-hour lead times) by leveraging deep learning techniques, specifically Long Short-Term Memory (LSTM) and one-dimensional Convolutional Neural Networks (1D CNN). The models utilize hourly ERA5 reanalysis data from the ECMWF spanning January 2018 to January 2026. Ten meteorological and oceanographic variables are incorporated, including eastward (u-component) and northward (v-component) wind components at a height of 10 meters, mean sea level pressure, significant wave height, mean wave period, wave direction, ocean current speed and direction, and sea surface temperature. 
+                <br><br>
+                The research focuses on five strategic coastal locations: Patong Beach (Phuket), Pak Phanang and Hua Sai (Nakhon Si Thammarat), Cha-am (Phetchaburi) and Pattaya (Chonburi). Model performance is evaluated using MAE, RMSE, NRMSE and MAPE. Furthermore, the SHAP (SHapley Additive exPlanations) technique is employed to interpret variable contributions and identify key drivers in the forecasting process. The resulting models aim to provide high-precision tools for marine decision-making, thereby enhancing maritime safety and promoting sustainable ocean development.
+            </p>
+            <p style="margin-top: 25px; color: #3498db; font-weight: 700;">
+                <span style="color: #fff;">Keywords:</span> Wave height forecasting, Deep learning, LSTM, 1D CNN, ERA5, SHAP, Thailand coastal waters
+            </p>
+        </div>
+
+        <h2 id="main-resources" class="section-title">Main Content</h2>
+        
+        <div class="resource-container">
+            <a href="https://drive.google.com/drive/folders/1Zz6LrvlHGG31Pmmuqsg2AC8kvUGBqj5h?usp=drive_link" target="_blank" class="resource-box">
+                <div class="icon-wrapper">
+                    <img src="report.jpg" alt="Report" style="width: 100%; height: 100%; object-fit: contain; filter: invert(1); mix-blend-mode: screen;">
+                </div>
+                <h3>Report</h3>
+                <p>Download Full Project Report</p>
+            </a>
+
+            <a href="javascript:void(0);" onclick="alert('Prediction Wave App is coming soon!');" class="resource-box">
+                <div class="icon-wrapper">
+                    <img src="app.jpg" alt="App" style="width: 100%; height: 100%; object-fit: contain; filter: invert(1); mix-blend-mode: screen;">
+                </div>
+                <h3>Prediction Wave App</h3>
+                <p>Access the Forecasting Application</p>
+            </a>
+
+            <a href="#" class="resource-box">
+                <div class="icon-wrapper">
+                    <img src="code.jpg" alt="Source Code" style="width: 100%; height: 100%; object-fit: contain; filter: invert(1); mix-blend-mode: screen;">
+                </div>
+                <h3>Source Code</h3>
+                <p>View Repository on GitHub</p>
+            </a>
+        </div>
+
+        <h2 id="workflow" class="section-title">Methodology Workflow</h2>
+        <div class="workflow-box">
+            <img src="workflow.jpg" alt="System Workflow Diagram">
+            <p class="caption">Figure 1: Proposed system architecture and data flow.</p>
+        </div>
+
+        <h2 id="team" class="section-title">Team Members</h2>
+        <div class="team-container">
+            
+            <a href="https://github.com/Kanyaweekh" target="_blank" class="member-card">
+                <div class="img-circle">
+                    <img src="m1.jpg" alt="Kanyawee Khamudom">
+                </div>
+                <h3 class="role-blue">Student</h3>
+                <p class="name-white">Kanyawee Khamudom</p>
+            </a>
+
+            <a href="https://github.com/natthaphonmint" target="_blank" class="member-card">
+                <div class="img-circle">
+                    <img src="m2.jpg" alt="Natthaphon Artkaeo">
+                </div>
+                <h3 class="role-blue">Student</h3>
+                <p class="name-white">Natthaphon Artkaeo</p>
+            </a>
+
+            <a href="https://vi-lab-th.github.io/" target="_blank" class="member-card">
+                <div class="img-circle">
+                    <img src="m3.jpg" alt="Assoc. Prof. Thanapong Intharah">
+                </div>
+                <h3 class="role-blue">Project Advisor</h3>
+                <p class="name-white">Assoc. Prof. Thanapong<br>Intharah</p>
+            </a>
+
+        </div>
+
+        <div style="height: 100px;"></div>
+    </div>
+
+</body>
+</html>
