@@ -1,4 +1,4 @@
-/* --- RESET & FONTS --- */
+/* --- 1. RESET & GLOBAL FONTS --- */
 * {
     margin: 0;
     padding: 0;
@@ -10,10 +10,10 @@ body {
     font-family: 'Open Sans', sans-serif;
     background: #000;
     color: #fff;
-    overflow-x: hidden;
+    overflow-x: hidden; /* ป้องกันสกรอลล์แนวนอน */
 }
 
-/* --- NAVBAR --- */
+/* --- 2. NAVBAR (เมนูด้านบน) --- */
 .navbar {
     position: fixed;
     top: 0;
@@ -22,9 +22,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 31, 63, 0.95);
+    background: rgba(0, 31, 63, 0.95); /* สีพื้นหลังเมนู */
     backdrop-filter: blur(10px);
-    z-index: 1000;
+    z-index: 1000; /* อยู่เหนือเนื้อหาปกติ แต่อยู่ใต้ Modal */
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
@@ -35,7 +35,7 @@ body {
 }
 
 .nav-logo {
-    height: 40px; /* บังคับความสูงโลโก้ */
+    height: 40px; /* บังคับความสูงโลโก้ใน CSS อีกทาง */
     width: auto;
     margin-right: 12px;
 }
@@ -67,7 +67,7 @@ body {
     color: #3498db;
 }
 
-/* --- HERO SECTION --- */
+/* --- 3. HERO SECTION (วิดีโอหน้าแรก) --- */
 .hero-section {
     position: relative;
     width: 100%;
@@ -122,11 +122,10 @@ body {
     color: #e0f7fa;
 }
 
-/* --- CONTENT CONTAINER --- */
+/* --- 4. CONTENT CONTAINER (พื้นหลังใต้น้ำ) --- */
 .content-container {
     position: relative;
-    /* พื้นหลัง */
-    background: url('picture/underwater.jpg') no-repeat center top;
+    background: url('picture/underwater.jpg') no-repeat center top; /* Path รูปพื้นหลัง */
     background-size: cover;
     background-attachment: fixed;
     padding: 80px 50px;
@@ -138,13 +137,13 @@ body {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0, 20, 40, 0.85);
+    background: rgba(0, 20, 40, 0.85); /* สีทับหน้าให้มืดลง */
     z-index: 0;
 }
 
 .content-container > * { position: relative; z-index: 1; }
 
-/* --- SECTIONS --- */
+/* --- 5. HEADINGS (หัวข้อ) --- */
 .section-title {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
@@ -167,7 +166,7 @@ body {
     border-radius: 2px;
 }
 
-/* --- ABSTRACT BOX --- */
+/* --- 6. ABSTRACT BOX --- */
 .abstract-box {
     max-width: 900px;
     margin: 0 auto;
@@ -185,7 +184,7 @@ body {
     text-align: justify;
 }
 
-/* --- MAIN CONTENT (Resources) --- */
+/* --- 7. MAIN CONTENT (กล่อง Download/Link) --- */
 .resource-container {
     display: flex;
     justify-content: center;
@@ -227,7 +226,7 @@ body {
 .resource-box h3 { font-size: 20px; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; }
 .resource-box p { font-size: 14px; color: #aaa; }
 
-/* --- TEAM MEMBERS --- */
+/* --- 8. TEAM MEMBERS --- */
 .team-container {
     display: flex;
     justify-content: center;
@@ -257,7 +256,7 @@ body {
 .role-blue { color: #3498db; font-size: 16px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; }
 .name-white { color: #fff; font-size: 18px; font-weight: 600; }
 
-/* --- WORKFLOW SLIDER --- */
+/* --- 9. WORKFLOW SLIDER --- */
 .workflow-slider {
     max-width: 900px; margin: 0 auto;
     position: relative;
@@ -292,4 +291,121 @@ body {
     transition: background-color 0.3s;
 }
 .active, .dot:hover { background-color: #3498db; }
-.
+.fade { animation-name: fade; animation-duration: 1.5s; }
+@keyframes fade { from {opacity: .4} to {opacity: 1} }
+
+/* --- 10. MODAL (POP-UP รูปภาพ) --- */
+/* แก้ไขล่าสุด: ปรับ z-index และขนาดให้ถูกต้อง */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 99999; /* 🔥 เลขเยอะๆ เพื่อให้อยู่บนสุด ทับเมนู Navbar */
+    padding-top: 30px; 
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.95); /* สีพื้นหลังมืดๆ */
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    margin: auto; 
+    display: block;
+    width: auto; 
+    max-width: 90%; 
+    max-height: 85vh; /* 🔥 จำกัดความสูงรูปไม่ให้เกินจอ */
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border: 2px solid #333;
+}
+
+#caption-text {
+    margin: auto; 
+    display: block; 
+    width: 80%;
+    text-align: center; 
+    color: #fff;
+    padding: 15px 0; 
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* ปุ่มปิด (X) */
+.close {
+    position: fixed; /* ลอยอยู่ติดหน้าจอ ไม่เลื่อนตาม */
+    top: 20px; 
+    right: 30px;
+    color: #fff; 
+    font-size: 35px;
+    font-weight: bold; 
+    cursor: pointer;
+    z-index: 100000; /* อยู่เหนือรูปภาพ */
+    background: rgba(255, 255, 255, 0.1);
+    width: 50px; height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.close:hover { 
+    color: #fff; 
+    background: #e74c3c; /* เมาส์ชี้เป็นสีแดง */
+    transform: rotate(90deg);
+}
+
+/* --- 11. JELLYFISH ANIMATION (แมงกะพรุน) --- */
+.jellyfish {
+    position: fixed;
+    width: 120px;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 10;
+    filter: drop-shadow(0 0 10px rgba(100, 200, 255, 0.5));
+    mix-blend-mode: multiply; 
+}
+
+.jelly-1 {
+    bottom: 10%;
+    left: -150px;
+    animation: swimRight 25s linear infinite;
+}
+
+.jelly-2 {
+    top: 20%;
+    right: -150px;
+    animation: swimLeft 30s linear infinite;
+    animation-delay: 2s;
+}
+
+@keyframes swimRight {
+    0% { left: -150px; transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-30px) rotate(5deg); }
+    50% { transform: translateY(0) rotate(0deg); }
+    75% { transform: translateY(30px) rotate(-5deg); }
+    100% { left: 100vw; transform: translateY(0); } 
+}
+
+@keyframes swimLeft {
+    0% { right: -150px; transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(40px) rotate(-5deg); }
+    50% { transform: translateY(0) rotate(0deg); }
+    75% { transform: translateY(-40px) rotate(5deg); }
+    100% { right: 100vw; transform: translateY(0); }
+}
+
+/* --- 12. RESPONSIVE DESIGN (สำหรับมือถือ) --- */
+@media screen and (max-width: 768px) {
+    .jellyfish { display: none; /* ซ่อนแมงกะพรุนในมือถือ */ }
+    
+    .navbar { padding: 15px; flex-direction: column; gap: 10px; }
+    .hero-content h1 { font-size: 36px; } 
+    .hero-content p { font-size: 18px; }  
+    
+    .resource-container, .team-container { flex-direction: column; align-items: center; }
+    
+    .modal-content { width: 95%; max-height: 70vh; margin-top: 20%; }
+    .close { top: 10px; right: 10px; width: 40px; height: 40px; line-height: 40px; font-size: 25px; }
+}
