@@ -63,6 +63,7 @@
                 <h3>Prediction Wave App</h3>
                 <p>Access the Forecasting Application</p>
             </a>
+
             <a href="https://github.com/natthaphonmint/wave_height_forecasting" target="_blank" class="resource-box">
                 <div class="icon-wrapper"><img src="picture/code.jpg" alt="Source Code" class="icon-img" style="width: 50px;"></div>
                 <h3>Source Code</h3>
@@ -141,7 +142,7 @@
                 slides[slideIndex-1].style.display = "block";  
                 dots[slideIndex-1].className += " active";
             }
-            timer = setTimeout(showSlidesAuto, 5000); // Change image every 5 seconds
+            timer = setTimeout(showSlidesAuto, 5000); 
         }
 
         function plusSlides(n) {
@@ -167,9 +168,8 @@
             timer = setTimeout(showSlidesAuto, 5000); 
         }
 
-        // Modal Logic
         function openModal(element) {
-            clearTimeout(timer); // Pause slider when modal is open
+            clearTimeout(timer); 
             var modal = document.getElementById("myModal");
             var modalImg = document.getElementById("img01");
             var captionText = document.getElementById("caption-text");
@@ -180,10 +180,9 @@
 
         function closeModal() {
             document.getElementById("myModal").style.display = "none";
-            timer = setTimeout(showSlidesAuto, 2000); // Resume slider
+            timer = setTimeout(showSlidesAuto, 2000); 
         }
 
-        // Close modal when clicking outside image
         window.onclick = function(event) {
             var modal = document.getElementById("myModal");
             if (event.target == modal) {
